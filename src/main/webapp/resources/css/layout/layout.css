@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+	#container{
+		width: 100%;
+		margin: 0px auto;
+		text-align: center;
+		border: 0px solid #bcbcbc;
+	}
+	
+	#header{
+		height: 70px;
+		padding: 10px;
+	}
+	
+	#sidebar-left{
+		width: 200px;
+		float: left;
+		border: solid #bcbcbc;
+		padding: 10px;
+	}
+			
+	#content{
+		width: 60%;
+		padding: 15px;
+		margin: 0px auto;
+		border: 0px solid #bcbcbc;
+		float: left;
+	}

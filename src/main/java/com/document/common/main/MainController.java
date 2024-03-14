@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller("mainController")
 public class MainController {
 		
-	@RequestMapping(value={"/home/home.do"}, method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value={"/management/document.do"}, method={RequestMethod.GET,RequestMethod.POST})
 	 private ModelAndView main(HttpServletRequest req,HttpServletResponse resp) throws Exception {
 		HttpSession session;
 		session=req.getSession();
