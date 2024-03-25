@@ -4,6 +4,7 @@
 		height: 70px;
 		display: flex;
     	align-items: center;
+    	margin-left: 70px;
 	}
 	
 	img.home{
@@ -15,7 +16,7 @@
 	.text-filed {
   		position: relative;
   		margin: 0px 0px 0px 100px;
-  		width: 400px;
+  		width: 900px;
 	}
 
 	.search-box {
@@ -28,13 +29,13 @@
 	    color: #999;
 	    background: #f9f9f9;
 	    float: left;
+	    margin-left: 395px;
 	}
 	
 	.search-btn{
 		position: absolute;
 		top: 8px;
-	    right: 30px;
-	    width: 30px;
+	    left: 735px;
 	    height: 30px;
 	    padding: 0px;
     	border: 0px;
@@ -47,14 +48,15 @@
 	    height: 20px;
 	}
 	
-	.register-btn{
+	.login-btn{
 		width: 80px;
-	    height: 40px;
-	    margin-left: 700px;
+		padding: 8px 0px 8px 0px;
+	    margin-left: 650px;
 	    border: 1px solid #e0e0e0;
 	    border-radius: 10px;
 	    color: #999;
 	    background: #f9f9f9;
 	    float: left;
 	    cursor: pointer;
+	    text-decoration: none;
 	}

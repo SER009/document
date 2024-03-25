@@ -27,7 +27,7 @@
 			</form>
 		</div>
 		<div>
-			<button type="button" class="register-btn" onclick="location.href='${contextPath}/management/document.do'">등록하기</button>
+			<a class="login-btn" href="${contextPath}/member/loginForm.do">로그인</a>
 		</div>
 	</div>
 </body>
