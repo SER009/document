@@ -79,5 +79,10 @@
 			</c:otherwise>
 		</c:choose>
 	</table>
+	<div>
+		<c:if test="${isLogOn == true && UserId=='admin'}">
+			<a class="addMemberForm" href="${contextPath}/member/addMemberForm.do">회원 추가</a>			
+		</c:if>
+	</div>
 </body>
 </html>

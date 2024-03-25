@@ -13,10 +13,15 @@
 	<!-- 로그인 -->
 	<select id="login" resultType="memberVO" parameterType="memberVO">
 		select * 
-			from dbo.member
+			from member
 				where mem_id = #{mem_id}
 					and
 					  password = #{password}
 	</select>
-
+	
+	<!-- 회원 추가 -->
+	<insert id="insertMember" parameterType="memberVO">
+		insert into member(mem_id, password)
+			values(#{mem_id}, #{password})
+	</insert>
 </mapper>
