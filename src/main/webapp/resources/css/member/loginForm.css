@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+	.loginTable {
+		border: 1px solid #99e6ff;
+		border-collapse: collapse;
+		border-style: hidden;
+		box-shadow: 0 0 0 1px #99e6ff;
+		border-spacing: 0;
+		border-radius: 15px;
+	}
+
+	.login {
+		border: 1px solid #99e6ff;
+		padding: 10px;
+		font-size: 15px;
+		border-radius: 5px;
+	}
+	
+	.loginID {
+		border: 1px solid #99e6ff;
+		padding: 10px;
+		font-size: 15px;
+		font-weight: bold;
+		border-radius: 15px 0px 0px 0px;
+		background-color: #b3ecff;
+	}
+
+	.loginPwd {
+		border: 1px solid #99e6ff;
+		padding: 10px;
+		font-size: 15px;
+		font-weight: bold;
+		border-radius: 0px 15px 0px 0px;
+		background-color: #b3ecff;
+	}
+	
+	.loginInput {
+		border: 1px solid #99e6ff;
+		width: 150px;
+		height: 30px;
+		border-radius: 5px;
+	}
+
+	.loginButton {
+		width: 100px;
+		height: 30px;
+		background-color: #99e6ff;
+		color: #0066cc;
+		border: none;
+		border-radius: 5px;
+		font-size: 15px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	
