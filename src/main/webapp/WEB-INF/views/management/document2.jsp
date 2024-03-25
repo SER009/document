@@ -35,40 +35,43 @@
 		<c:choose>
 			<c:when test="${not empty documentList}">
 				<c:forEach var="document" items="${documentList}">
-					<c:if test="${document.no == no}">
-						총 "${document.no}"개
-					</c:if>
+					<!--<c:if test="${document.no == type}">
+						총 "${document.type}"개
+					</c:if>-->
 				</c:forEach>
 			</c:when>
 			<c:otherwise>
 				합계
 			</c:otherwise>
 		</c:choose>
+	총 개
 	</div>
 	<table class= "main-table">
-		<tr>
-			<td>문서 번호</td>
-			<td>문서 분류</td>
-			<td>문서명</td>
-			<td>문서 내용</td>
-			<td>등록일</td>
-			<td>수정일</td>
-			<td>개정</td>
-			<td>다운로드</td>
-		</tr>
+		
+			<tr>
+				<td>문서 번호</td>
+				<td>문서 분류</td>
+				<td>문서명</td>
+				<td>문서 내용</td>
+				<td>등록일</td>
+				<td>수정일</td>
+				<td>개정</td>
+				<td>다운로드</td>
+			</tr>
 		<c:choose>
 			<c:when test="${not empty documentList}">
-				<c:forEach var="document" items="${documentList}">
-					<tr>
-						<td>${document.type}</td>
-						<td>${document.no}</td>
-						<td>${document.fileName}</td>
-						<td>${document.content}</td>
-						<td>${document.register}</td>
-						<td>${document.modify}</td>
-						<td>${document.revision}</td>
-					</tr>
-				</c:forEach>
+	
+					<!--<c:if test="${document.type == type}">-->
+						<tr>
+							<td>${documentList.type}</td>
+							<td>${documentList.type}</td>
+							<td>${documentList.type}</td>
+							<td>${documentList.type}</td>
+							<td>${documentList.type}</td>
+							<td><a href="${contextPath}/download/${document.id}">Download</a></td>
+						</tr>
+					<!--</c:if>-->
+
 			</c:when>
 			<c:otherwise>
 				<tr>

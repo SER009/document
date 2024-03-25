@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.document.management.dao.DocumentDAO">
+	<resultMap type="DocumentVO" id="documentResult">
+		<result property="no" column="no" />
+		<result property="type" column="type"/>
+		<result property="fileName" column="fileName"/>
+		<result property="content" column="content"/>
+		<result property="register" column="register"/>
+		<result property="modify" column="modify"/>
+		<result property="revision" column="revision"/>
+		<result property="files" column="files"/>	
+	</resultMap>
+
+	<select id="documentList" resultMap="documentResult">
+		select * from dbo.document
+	</select>
+</mapper>

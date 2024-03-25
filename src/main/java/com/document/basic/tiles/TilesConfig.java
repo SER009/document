@@ -1,4 +1,4 @@
-package com.document.common.tiles;
+package com.document.basic.tiles;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
