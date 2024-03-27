@@ -22,4 +22,16 @@
 			<put-attribute name="title" value="home" />
 			<put-attribute name="body" value="/WEB-INF/views/member/loginForm.jsp" />
 		</definition>
+		
+	<!-- 회원 추가 -->
+		<definition name="/member/addMemberForm" extends="layout">
+			<put-attribute name="title" value="home" />
+			<put-attribute name="body" value="/WEB-INF/views/member/addMemberForm.jsp" />
+		</definition>
+	
+	<!-- 문서 추가 --> 
+		<definition name="/management/registerForm" extends="layout">
+			<put-attribute name="title" value="home" />
+			<put-attribute name="body" value="/WEB-INF/views/management/registerForm.jsp" />
+		</definition>
 </tiles-definitions>

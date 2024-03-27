@@ -35,8 +35,8 @@
 		<c:choose>
 			<c:when test="${not empty documentList}">
 				<c:forEach var="document" items="${documentList}">
-					<c:if test="${document.no == no}">
-						총 "${document.no}"개
+					<c:if test="${document.docu_Count == docu_Count}">
+						총 "${document.docu_Count}"개
 					</c:if>
 				</c:forEach>
 			</c:when>
@@ -48,25 +48,26 @@
 	<table class= "main-table">
 		<tr>
 			<td>문서 번호</td>
-			<td>문서 분류</td>
-			<td>문서명</td>
+			<td>문서 유형</td>
+			<td>문서 이름</td>
 			<td>문서 내용</td>
 			<td>등록일</td>
 			<td>수정일</td>
 			<td>개정</td>
-			<td>다운로드</td>
+			<td>첨부파일</td>
 		</tr>
 		<c:choose>
 			<c:when test="${not empty documentList}">
 				<c:forEach var="document" items="${documentList}">
 					<tr>
-						<td>${document.type}</td>
-						<td>${document.no}</td>
-						<td>${document.fileName}</td>
+						<td>${document.docu_No}</td>
+						<td>${document.docu_Type}</td>
+						<td>${document.docu_Name}</td>
 						<td>${document.content}</td>
-						<td>${document.register}</td>
-						<td>${document.modify}</td>
+						<td>${document.reg_Date}</td>
+						<td>${document.mod_Date}</td>
 						<td>${document.revision}</td>
+						<td>${document.file_No}</td>
 					</tr>
 				</c:forEach>
 			</c:when>
@@ -82,6 +83,11 @@
 	<div>
 		<c:if test="${isLogOn == true && UserId=='admin'}">
 			<a class="addMemberForm" href="${contextPath}/member/addMemberForm.do">회원 추가</a>			
+		</c:if>
+	</div>
+	<div>
+		<c:if test="${isLogOn == true }">
+			<a class="register" href="${contextPath }/management/registerForm.do">문서 등록</a>
 		</c:if>
 	</div>
 </body>

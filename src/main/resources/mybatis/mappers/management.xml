@@ -5,14 +5,23 @@
 
 <mapper namespace="com.document.management.dao.DocumentDAO">
 	<resultMap type="DocumentVO" id="documentResult">
-		<result property="no" column="no" />
-		<result property="type" column="type"/>
-		<result property="fileName" column="fileName"/>
+		<result property="docu_No" column="docu_No" />
+		<result property="docu_Type" column="docu_Type"/>
+		<result property="docu_Name" column="docu_Name"/>
 		<result property="content" column="content"/>
-		<result property="register" column="register"/>
-		<result property="modify" column="modify"/>
+		<result property="reg_Date" column="reg_Date"/>
+		<result property="mod_Date" column="mod_Date"/>
 		<result property="revision" column="revision"/>
-		<result property="files" column="files"/>	
+		<result property="file_No" column="file_No"/>	
+		<result property="docu_Count" column="docu_Count"/>	
+	</resultMap>
+	
+	<resultMap type="FilesVO" id="filesResult">
+		<result property="file_No" column="file_No" />
+		<result property="file_Name" column="file_Name"/>
+		<result property="ext" column="ext"/>
+		<result property="size" column="size"/>
+		<result property="reg_Date" column="reg_Date"/>
 	</resultMap>
 
 	<select id="documentList" resultMap="documentResult">

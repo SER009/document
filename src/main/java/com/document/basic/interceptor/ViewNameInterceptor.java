@@ -10,7 +10,7 @@ public class ViewNameInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object handler)
-			throws Exception {
+			throws Exception { //4
 		try {
 			String viewName = getViewName(req);
 			req.setAttribute("viewName", viewName);
