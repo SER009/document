@@ -27,20 +27,6 @@ public class MemberControllerImpl implements MemberController{
 	@Autowired
 	private MemberVO memberVO;
 	
-	//로그인,회원추가 화면 이동
-	@RequestMapping(value="/member/*Form.do", method=RequestMethod.GET)
-	private ModelAndView form(@RequestParam(value="result", required=false) String result, @RequestParam(value="action",required=false) String action,HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String viewName = (String)request.getAttribute("viewName");
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("action", action);
-		
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("result",result);
-		mav.setViewName(viewName);
-		return mav;
-	}
-	
 	//로그인
 	@Override
 	@RequestMapping(value="/member/login.do", method=RequestMethod.POST)

@@ -8,12 +8,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class InterceptorConfig extends WebMvcConfigurerAdapter {
 
 	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
+	public void addInterceptors(InterceptorRegistry registry) { //2
 		registry.addInterceptor(new ViewNameInterceptor())
 		.addPathPatterns("/*.do")
 		.addPathPatterns("/*/*.do")
-		.addPathPatterns("/*/*/*.do")
-		.excludePathPatterns("/users/login");
+		.addPathPatterns("/*/*/*.do");
 	}
 	
 }

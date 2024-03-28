@@ -23,7 +23,7 @@
 			<tr>
 				<td>문서타입</td>
 				<td class="td2">
-					<select name="document_type">
+					<select name="docu_Type">
 						<option value="meeting">회의록</option>
 						<option value="demand">요구사항</option>
 						<option value="manual">매뉴얼</option>

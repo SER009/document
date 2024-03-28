@@ -5,17 +5,59 @@
 
 <mapper namespace="com.document.management.dao.DocumentDAO">
 	<resultMap type="DocumentVO" id="documentResult">
-		<result property="no" column="no" />
-		<result property="type" column="type"/>
-		<result property="fileName" column="fileName"/>
+		<result property="docu_No" column="docu_No" />
+		<result property="docu_Type" column="docu_Type"/>
+		<result property="docu_Name" column="docu_Name"/>
 		<result property="content" column="content"/>
-		<result property="register" column="register"/>
-		<result property="modify" column="modify"/>
+		<result property="reg_Date" column="reg_Date"/>
+		<result property="mod_Date" column="mod_Date"/>
 		<result property="revision" column="revision"/>
-		<result property="files" column="files"/>	
+		<result property="file_No" column="file_No"/>	
+		<result property="docu_Count" column="docu_Count"/>	
 	</resultMap>
-
-	<select id="documentList" resultMap="documentResult">
-		select * from dbo.document
-	</select>
+	
+	<resultMap type="FilesVO" id="filesResult">
+		<result property="docu_No" column="docu_No" />
+		<result property="file_No" column="file_No" />
+		<result property="file_Name" column="file_Name"/>
+		<result property="ext" column="ext"/>
+		<result property="size" column="size"/>
+		<result property="reg_Date" column="reg_Date"/>
+	</resultMap>
+	
+	<!-- 문서 목록 -->
+		<select id="documentList" resultMap="documentResult">
+			select
+				*
+			from
+				document
+		</select>
+	
+	<!-- 문서 등록 -->
+		<insert id="insertDocument" parameterType="DocumentVO" >
+			insert into
+				document(
+						docu_Type,
+						docu_Name,
+						content						
+				)
+				values(
+						#{docu_Type},				
+						#{docu_Name},				
+						#{content}		
+				)				
+		</insert>
+		
+	<!-- 문서 파일 테이블 insert -->
+		<insert id="insertDocuFile" parameterType="FilesVO">
+			insert into
+				files(
+						docu_No,
+						file_No,						
+				)
+				values(
+						#{docu_No},
+						#{docu_No}
+				)
+		</insert>
 </mapper>
