@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.document.management.dao.FileDAO">
+	<resultMap type="FilesVO" id="filesResult">
+		<result property="docu_No" column="docu_No" />
+		<result property="file_No" column="file_No" />
+		<result property="file_Name" column="file_Name"/>
+		<result property="server_Name" column="server_Name"/>
+		<result property="file_Path" column="file_Path"/>
+		<result property="ext" column="ext"/>
+		<result property="size" column="size"/>
+		<result property="reg_Date" column="reg_Date"/>
+	</resultMap>
+	
+	<!-- 파일 등록 -->
+	<insert id="insertFiles">
+		insert into
+			files(
+				file_Name,
+				server_Name,
+				file_Path,
+				ext,
+				size
+			)
+			values(
+				#{file_Name},
+				#{server_Name},
+				#{file_Path},
+				#{ext},
+				#{size}
+			)	
+	</insert>
+	
+	<!-- 파일 조회 -->
+	<select id="selectFiles" resultMap="filesVO">
+		select
+			*
+		from
+			files
+	</select>
+	
+	<!-- 파일 수정 -->
+	<update id="updateFiles" parameterType="filesVO">
+		update
+			files
+		set
+			file_Name=#{file_Name},
+			ext=#{ext},
+			size=#{size}
+		where
+			file_No=#{file_No}		
+	</update>
+	
+	<!-- 파일 삭제 -->
+	<delete id="deleteFiles" parameterType="filesVO">
+		delete from
+			files
+		where 
+			file_No = #{file_No}
+	</delete>
+</mapper>

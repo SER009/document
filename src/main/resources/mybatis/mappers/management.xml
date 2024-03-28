@@ -17,14 +17,47 @@
 	</resultMap>
 	
 	<resultMap type="FilesVO" id="filesResult">
+		<result property="docu_No" column="docu_No" />
 		<result property="file_No" column="file_No" />
 		<result property="file_Name" column="file_Name"/>
 		<result property="ext" column="ext"/>
 		<result property="size" column="size"/>
 		<result property="reg_Date" column="reg_Date"/>
 	</resultMap>
-
-	<select id="documentList" resultMap="documentResult">
-		select * from dbo.document
-	</select>
+	
+	<!-- 문서 목록 -->
+		<select id="documentList" resultMap="documentResult">
+			select
+				*
+			from
+				document
+		</select>
+	
+	<!-- 문서 등록 -->
+		<insert id="insertDocument" parameterType="DocumentVO" >
+			insert into
+				document(
+						docu_Type,
+						docu_Name,
+						content						
+				)
+				values(
+						#{docu_Type},				
+						#{docu_Name},				
+						#{content}		
+				)				
+		</insert>
+		
+	<!-- 문서 파일 테이블 insert -->
+		<insert id="insertDocuFile" parameterType="FilesVO">
+			insert into
+				files(
+						docu_No,
+						file_No,						
+				)
+				values(
+						#{docu_No},
+						#{docu_No}
+				)
+		</insert>
 </mapper>
